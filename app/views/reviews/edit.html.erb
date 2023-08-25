@@ -1,0 +1,68 @@
+
+
+<style type="text/css">
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+/*    background: darkblue;*/
+
+}
+.as{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding: 30px 0;
+}
+h1{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 30px 0;
+    color: white;
+}
+.btn{
+  margin-top: 5px;
+  padding: 2px;
+  color: white;
+  margin-left: 10px;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    background: lightskyblue;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+.form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+
+  <div class="table-wrapper bg-secondary">
+  <h1> Update Review</h1>
+  <div class="form text-white">
+      <%= form_with model: @review do |form| %>
+      <%= form.label :rating %><br>
+      <%= form.number_field :rating %><br>
+      <%= form.label :content%><br>
+      <%= form.text_field :content %><br>
+      <%= form.submit 'Edit Review',class:"btn btn-outline-dark " %>
+       <% end %>
+</div>
+  <div class="as">
+    <%= link_to "All Review", reviews_path,class:"btn btn-outline-dark" %>
+  </div>
+</div>
+
+

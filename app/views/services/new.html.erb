@@ -1,0 +1,69 @@
+
+<style>
+  body {
+       border: 1px solid #ccc;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      background: grey;
+      align-items: center;
+      min-height: 100vh;
+      color: white;
+      margin: 0;
+    }
+.signin
+{
+  position: absolute;
+  width: 400px;
+  color: black;
+  background: #e9ecef;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+section .signin .content
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+ h2
+{
+  font-size: 2em;
+  text-transform: uppercase;
+}
+</style>
+
+<div class="signin">
+  <div class="content">
+  <h2>Create Service</h2>
+  <%= form_with model: @service do |form| %>
+  <%= form.select :status, [["Open", "Open"], ["Close", "Close"]] %>
+  <%= form.label :service_name %><br>
+  <%= form.text_field :service_name %><br>
+
+  <%= form.label :location %><br>
+  <%= form.text_field :location %><br>
+
+   <%= form.label :city %><br>
+  <%= form.text_field :city %><br>
+
+  <%= form.label :service_profile %>
+  <%= form.file_field :service_profile %><br>
+
+  <%= form.submit 'create service',class:"btn btn-outline-dark" %>
+  <%= link_to "All Service", services_path,class:"btn btn-outline-dark"%>
+
+  <% end %>
+
+</div>
+</div>
+</section>
